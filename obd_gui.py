@@ -20,7 +20,7 @@ from obd_sensors import *
 
 # OBD variables
 BACKGROUND_FILENAME = "bg_black.jpg"
-LOGO_FILENAME 		= "cowfish.png"
+LOGO_FILENAME 		= "nx13688.png"
 
 #-------------------------------------------------------------------------------
 
@@ -201,7 +201,7 @@ class OBDPanelGauges(wx.Panel):
 
         # Grid sizer
         nrows, ncols = 2, 3
-        vgap, hgap = 50, 50
+        vgap, hgap = 10, 10
         gridSizer = wx.GridSizer(nrows, ncols, vgap, hgap)
 
         # Create a box for each sensor
@@ -227,7 +227,7 @@ class OBDPanelGauges(wx.Panel):
             # Text for sensor name
             t2 = wx.StaticText(parent=self, label=unit+"\n"+name, style=wx.ALIGN_CENTER)
             t2.SetForegroundColour('WHITE')
-            font2 = wx.Font(13, wx.ROMAN, wx.NORMAL, wx.BOLD, faceName="Monaco")
+            font2 = wx.Font(8, wx.ROMAN, wx.NORMAL, wx.BOLD, faceName="Monaco")
             t2.SetFont(font2)
             boxSizer.Add(t2, 0, wx.ALIGN_CENTER | wx.ALL, 5)
             self.texts.append(t2)
@@ -356,7 +356,7 @@ class OBDLoadingPanel(wx.Panel):
         self.textCtrl = OBDText(self)
         boxSizer.Add(self.textCtrl, 1, wx.EXPAND | wx.ALL, 92)
         self.SetSizer(boxSizer)
-        font3 = wx.Font(16, wx.ROMAN, wx.NORMAL, wx.NORMAL, faceName="Monaco")
+        font3 = wx.Font(12, wx.ROMAN, wx.NORMAL, wx.NORMAL, faceName="Monaco")
         self.textCtrl.SetFont(font3)
         self.textCtrl.AddText(" Opening interface (serial port)\n")     
         self.textCtrl.AddText(" Trying to connect...\n")
